@@ -17,14 +17,28 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api', appRoutes);
 
 
-mongoose.connect('mongodb://localhost/tutorial', function(err){
-	if(err){
-		console.log('NOT connected to MongoDB' + err);
-	}
-	else{
-		console.log('Succesfully connected to MongoDB');
-	}
-});
+if(process.env.DEV_ENV){
+    mongoose.connect('mongodb://localhost/tutorial', function(err){
+		if(err){
+			console.log('NOT connected to MongoDB' + err);
+		}
+		else{
+			console.log('Succesfully connected to MongoDB');
+		}
+	});
+}
+else{
+    mongoose.connect('mongodb://vatsal:vatsal1@ds215961.mlab.com:15961/meantutorialapp', function(err){
+		if(err){
+			console.log('NOT connected to MongoDB' + err);
+		}
+		else{
+			console.log('Succesfully connected to mLab MongoDB');
+		}
+	});
+}
+
+
 
 app.get('*', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
