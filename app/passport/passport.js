@@ -32,7 +32,7 @@ module.exports = function(app, passport){
 	    clientID: '1018036311682463',
 	    clientSecret: '15a806282da40502784ba7dba069c3e3',
 	    callbackURL: "https://ancient-castle-35842.herokuapp.com/auth/facebook/callback"
-	    //profileFields: ['id', 'email']
+	    profileFields: ['id', 'displayName', 'photos', 'email']
   	},
   	function(accessToken, refreshToken, profile, done) {
   		console.log(profile._json.email);
