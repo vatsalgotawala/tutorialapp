@@ -72,7 +72,7 @@ module.exports = function(router) {
 					  	'http://localhost:8080/activate/' + user.temporarytoken,
 					  	html: 'Hello <strong>' + user.name + '</strong>,<br><br>Thank you for registering at localhost.com.' +
 					  	' Please click on the link below to complete your activation:<br><br>' +
-					  	'<a href="http://localhost:8080/activate/' + user.temporarytoken + '">http://localhost:8080/activate/</a>'
+					  	'<a href="https://ancient-castle-35842.herokuapp.com/activate/' + user.temporarytoken + '">https://ancient-castle-35842.herokuapp.com/activate/</a>'
 					};
 
 					client.sendMail(email, function(err, info){
@@ -239,7 +239,7 @@ module.exports = function(router) {
 					  	'http://localhost:8080/activate/' + user.temporarytoken,
 					  	html: 'Hello <strong>' + user.name + '</strong>,<br><br>You recently requested a new account activation link.' +
 					  	' Please click on the link below to complete your activation:<br><br>' +
-					  	'<a href="http://localhost:8080/activate/' + user.temporarytoken + '">http://localhost:8080/activate/</a>'
+					  	'<a href="https://ancient-castle-35842.herokuapp.com/activate/' + user.temporarytoken + '">https://ancient-castle-35842.herokuapp.com/activate/</a>'
 					};
 
 					client.sendMail(email, function(err, info){
@@ -326,7 +326,7 @@ module.exports = function(router) {
 						  	'http://localhost:8080/reset/' + user.resettoken,
 						  	html: 'Hello <strong>' + user.name + '</strong>,<br><br>You recently request a password reset link.' +
 						  	' Please click on the link below to reset your password:<br><br>' +
-						  	'<a href="http://localhost:8080/reset/' + user.resettoken + '">http://localhost:8080/reset/</a>'
+						  	'<a href="https://ancient-castle-35842.herokuapp.com/reset/' + user.resettoken + '">https://ancient-castle-35842.herokuapp.com/reset/</a>'
 						};
 
 						client.sendMail(email, function(err, info){
