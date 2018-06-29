@@ -29,8 +29,8 @@ module.exports = function(app, passport){
 	});
 
 	passport.use(new FacebookStrategy({
-	    clientID: '1018036311682463',
-	    clientSecret: '15a806282da40502784ba7dba069c3e3',
+	    clientID: '258507181585825',
+	    clientSecret: '4fafd845ae35f28b9ebd2672e1aaff03',
 	    callbackURL: "https://ancient-castle-35842.herokuapp.com/auth/facebook/callback",
 	    profileFields: ['id', 'displayName', 'photos', 'email']
   	},
