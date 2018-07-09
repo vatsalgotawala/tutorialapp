@@ -426,6 +426,44 @@ module.exports = function(router) {
 		res.send(req.decoded);
 	});
 
+	router.put('/changepassword', function(req, res){
+		User.findOne({username: req.decoded.username}).select('username name email password').exec(function(err, user){
+			if(err) throw err;
+			if(req.body.password === null || req.body.password === ''){
+				res.json({success: false, message: 'Password not provided.'});
+			}
+			else{	
+				user.password = req.body.password;
+				user.save(function(err){
+					if(err){
+						res.json({success: false, message: err});
+					}
+					else{
+
+						var email = {
+						  	from: 'Localhost Staff, staff@localhost.com',
+						  	to: user.email,
+						  	subject: 'Localhost Change Password',
+						  	text: 'Hello ' + user.name + ', this e-mail is to notify you that your password has been changed successfully on localhost.com.',
+						  	html: 'Hello <strong>' + user.name + '</strong>,<br><br>This e-mail is to notify you that your password has been changed successfully on localhost.com.'
+						};
+
+						client.sendMail(email, function(err, info){
+						    if (err){
+						      console.log(error);
+						    }
+						    else {
+						      console.log('Message sent: ' + info.response);
+						    }
+						});
+
+						res.json({success: true, message: 'Password has been changed!'});
+					}
+				});
+			}
+		});
+	});
+
 	router.get('/renewToken/:username', function(req, res){
 		User.findOne({username: req.params.username}).select().exec(function(err, user){
 			if(err) throw err;

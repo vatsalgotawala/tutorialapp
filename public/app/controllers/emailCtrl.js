@@ -157,4 +157,44 @@ angular.module('emailController', ['userServices'])
 			app.errorMsg = 'Please ensure form is filled out properly.';
 		}
 	}
+})
+
+.controller('changePasswordCtrl', function(User, Auth, $timeout, $location, $window, $route){
+
+	app = this;
+	app.hide = false;
+
+	app.changePassword = function(regData, valid, confirmed){
+
+		app.errorMsg = false;
+		app.successMsg = false;
+		app.disabled = true;
+		app.loading = true;
+
+		if(valid && confirmed){
+			User.changePassword(app.regData).then(function(data){
+				app.loading = false;
+
+				if(data.data.success){
+					app.successMsg = data.data.message + '....Redirecting';
+					$timeout(function() {
+						Auth.logout();
+                        $location.path('/login');
+                        $route.reload();
+						$window.location.reload();
+                    }, 2000);
+				}
+				else{
+					app.loading = false;
+					app.disabled = false;
+					app.errorMsg = data.data.message;
+				}
+			});
+		}
+		else{
+			app.loading = false;
+			app.disabled = false;
+			app.errorMsg = 'Please ensure form is filled out properly.';
+		}
+	}
 });

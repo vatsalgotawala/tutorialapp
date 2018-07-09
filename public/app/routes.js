@@ -104,6 +104,13 @@ var app = angular.module('appRoutes', ['ngRoute'])
 		authenticated: false
 	})
 
+	.when('/changepassword', {
+		templateUrl: 'app/views/pages/users/reset/changepassword.html',
+		controller: 'changePasswordCtrl',
+		controllerAs: 'change',
+		authenticated: true
+	})
+
 	.when('/reset/:token', {
 		templateUrl: 'app/views/pages/users/reset/newpassword.html',
 		controller: 'resetCtrl',

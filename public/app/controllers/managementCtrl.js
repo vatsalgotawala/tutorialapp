@@ -70,6 +70,7 @@ angular.module('managementController', [])
 
 	app.search = function(searchKeyword,number){
 		if(searchKeyword){
+			$scope.number = undefined;
 			if(searchKeyword.length>0){
 				app.limit = 0;
 				$scope.searchFilter = searchKeyword;
@@ -78,18 +79,19 @@ angular.module('managementController', [])
 			}
 			else{
 				$scope.searchFilter = undefined;
-				app.limit = 0;
+				app.limit = undefined;
 			}
 		}
 		else{
+			$scope.number = undefined;
 			$scope.searchFilter = undefined;
-			app.limit = 0;
+			app.limit = undefined;
 		}
 	};
 
 	app.clear = function(){
 		$scope.number = undefined;
-		app.limit = 0;
+		app.limit = 5;
 		$scope.searchKeyword = undefined;
 		$scope.searchFilter = undefined;
 		app.showMoreError = false;
@@ -109,6 +111,9 @@ angular.module('managementController', [])
 			}
 			app.searchLimit = undefined;
 		}
+		else{
+			app.searchLimit = undefined;
+		}
 	};
 
 	app.advancedClear = function(){
@@ -119,6 +124,7 @@ angular.module('managementController', [])
 		$scope.searchByName = undefined;
 		app.sort = false;
 		app.searchLimit = 0;
+		$scope.advancedSearchFilter = {};
 	};
 
 	app.sortOrder = function(order){

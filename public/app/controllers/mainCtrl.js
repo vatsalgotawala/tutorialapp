@@ -67,6 +67,7 @@ angular.module('mainController', ['authServices', 'userServices'])
 				$location.path('/');
 				hideModal();
 				$route.reload();
+				$window.location.reload();
 			}, 2000);
 		}
 		$timeout(function(){

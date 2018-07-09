@@ -23,7 +23,7 @@
 	<div ng-class="{ 'has-success':(regForm.email.$valid && !regForm.email.$pristine && !register.emailInvalid), 'has-error':(!regForm.email.$valid && !regForm.email.$pristine) || (!regForm.email.$valid && regForm.$submitted) || register.emailInvalid }">
 		<label>Email:</label>
 		
-		<input ng-disabled="register.disabled" type="text" name="email" placeholder="Please enter email" class="form-control" ng-model="register.regData.email" ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" ng-minlength="3" ng-maxlength="25" ng-blur="register.checkEmail(regData);" required>
+		<input ng-disabled="register.disabled" type="text" name="email" placeholder="Please enter email" class="form-control" ng-model="register.regData.email" ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" ng-minlength="3" ng-maxlength="35" ng-blur="register.checkEmail(regData);" required>
 
 		<p class="help-block" ng-show="(!regForm.email.$pristine  && regForm.email.$error.required) || (regForm.$submitted && regForm.email.$error.required)">This field is required.</p>
 
@@ -32,7 +32,7 @@
 		<ul class="help-block" ng-show="(!regForm.email.$pristine && regForm.email.$error.pattern) || (!regForm.email.$pristine && regForm.email.$error.minlength) || (!regForm.email.$pristine  && regForm.email.$error.maxlength)">
 			<li>Must contain "@"</li>
 			<li>Must not contain any special characters</li>
-			<li>Must be at least 3 characters but no more than 25</li>
+			<li>Must be at least 3 characters but no more than 35</li>
 		</ul>
 	</div>
 
