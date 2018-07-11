@@ -88,3 +88,13 @@ header.navbar{
 	to {-moz-transform: rotate(360deg);}
 }
 
+@media screen and (max-width: 600px) {
+  .reset{
+    float: left;
+    display: inline-block;
+  }
+}
+
+@media (max-width: @screen-xs-min) {
+  .modal-xs { width: @modal-sm; }
+}

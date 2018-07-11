@@ -9,6 +9,7 @@ var appRoutes = require('./app/routes/api')(router);
 var path = require('path');
 var passport = require('passport');
 var social = require('./app/passport/passport')(app, passport);
+//process.env.DEV_ENV = true;
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
