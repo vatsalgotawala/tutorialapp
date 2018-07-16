@@ -67,6 +67,10 @@ header.navbar{
 	float: right;
 }
 
+.small{
+  display: none;
+}
+
 .spinner{
 	-webkit-animation:spin 1s infinite;
 	-moz-animation:spin 1s infinite;
@@ -91,7 +95,16 @@ header.navbar{
 @media screen and (max-width: 600px) {
   .reset{
     float: left;
-    display: inline-block;
+    display: block;
+  }
+  .large{
+    display: none;
+  }
+  .small{
+    display: table;
+  }
+  .small button{
+    margin-top: 10px;
   }
 }
 

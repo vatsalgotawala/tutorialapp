@@ -62,11 +62,11 @@
     <div class="topnav" id="myTopnav">
       
       <a href="#">LocalHost</a>
-      <a ng-class="{ active: isActive('/')}" href="/">Home</a>
-      <a ng-class="{ active: isActive('/management')}" ng-show="main.isLoggedIn && main.authorized" href="/management">Management</a>
-      <a ng-class="{ active: isActive('/profile')}" ng-show="main.isLoggedIn" href="/profile"><span class="glyphicon glyphicon-user"></span>&nbsp Hello {{main.username}}</a>
+      <a ng-class="{ active: isActive('/')}" href="/"><span class="glyphicon glyphicon-home"></span>&nbsp Home</a>
+      <a ng-class="{ active: isActive('/management')}" ng-show="main.isLoggedIn && main.authorized" href="/management"><span class="glyphicon glyphicon-wrench"></span>&nbsp Manage</a>
+      <a ng-class="{ active: isActive('/profile')}" ng-show="main.isLoggedIn" href="/profile"><span class="glyphicon glyphicon-user"></span>&nbsp Hello {{main.name}}</a>
 
-      <a class="reg" ng-class="{ active: isActive('/register')}" ng-show="!main.isLoggedIn" href="/register">Register</a>   
+      <a class="reg" ng-class="{ active: isActive('/register')}" ng-show="!main.isLoggedIn" href="/register"><span class="glyphicon glyphicon-check"></span>&nbsp Register</a>   
       <a class="reg" ng-class="{ active: isActive('/login')}" ng-show="!main.isLoggedIn" href="/login"><span class="glyphicon glyphicon-log-in"></span>&nbsp Login</a>
       
       <a class="reg" ng-show="main.isLoggedIn" href="#" ng-click="main.logout();"><span class="glyphicon glyphicon-log-out"></span>&nbsp Logout</a>

@@ -12,13 +12,26 @@
 	<input ng-disabled="main.disabled || facebook.disabled || google.disabled" type="password" name="password" placeholder="Please enter password" class="form-control" ng-model="main.loginData.password">
 	<br>
 	
-	<input ng-disabled="main.disabled || facebook.disabled || google.disabled" type="submit" value="Login" class="btn btn-info" />&nbsp
-	<button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-primary" ng-click="main.facebook();"><span class="fa fa-facebook"></span>&nbsp Facebook</button>&nbsp
-	<button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-danger" ng-click="main.google();"><span class="fa fa-google-plus"></span>&nbsp Google</button>&nbsp
+	<div class="large">
+		<input ng-disabled="main.disabled || facebook.disabled || google.disabled" type="submit" value="Login" class="btn btn-info" />&nbsp
+		<button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-primary" ng-click="main.facebook();"><span class="fa fa-facebook"></span>&nbsp Facebook</button>&nbsp
+		<button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-danger" ng-click="main.google();"><span class="fa fa-google-plus"></span>&nbsp Google</button>&nbsp
 
-	<div class="reset">
-		<a href="/resetpassword"><button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-success">Forgot Password</button></a>&nbsp
-		<a href="/resetusername"><button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-warning">Forgot Username</button></a>
+		<div class="reset">
+			<a href="/resetpassword"><button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-success">Forgot Password</button></a>&nbsp
+			<a href="/resetusername"><button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-warning">Forgot Username</button></a>
+		</div>
+	</div>
+
+	<div class="small">
+		<input ng-disabled="main.disabled || facebook.disabled || google.disabled" type="submit" value="Login" class="btn btn-info" /><br>
+		<button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-primary" ng-click="main.facebook();"><span class="fa fa-facebook"></span>&nbsp Facebook</button><br>
+		<button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-danger" ng-click="main.google();"><span class="fa fa-google-plus"></span>&nbsp Google</button><br>
+
+		<div class="reset">
+			<a href="/resetpassword"><button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-success">Forgot Password</button></a><br>
+			<a href="/resetusername"><button ng-disabled="main.disabled || facebook.disabled || google.disabled" type="button" class="btn btn-warning">Forgot Username</button></a>
+		</div>
 	</div>
 
 </form>

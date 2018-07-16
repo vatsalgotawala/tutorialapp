@@ -120,6 +120,7 @@ angular.module('mainController', ['authServices', 'userServices'])
 			Auth.getUser().then(function(data){
 				app.username = data.data.username;
 				app.useremail = data.data.email;
+				app.name = data.data.name;
 
 				User.getPermission().then(function(data){
 					if(data.data.permission === 'admin' || data.data.permission === 'moderator'){

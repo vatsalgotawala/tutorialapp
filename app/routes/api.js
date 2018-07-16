@@ -423,7 +423,15 @@ module.exports = function(router) {
 	});
 
 	router.post('/me', function(req,res){
-		res.send(req.decoded);
+		User.findOne({username: req.decoded.username}, function(err, user){
+			if(err) throw err;
+			if(!user){
+				res.json({success: false, message: 'No user was found'});
+			}
+			else{
+				res.json({success: true, message: 'got user data', username: user.username, name: user.name, email: user.email});
+			}
+		});
 	});
 
 	router.put('/changepassword', function(req, res){
